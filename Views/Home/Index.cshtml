@@ -1,0 +1,32 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<h2 style="text-align:center; font-family:'Comic Sans MS'">Please select background for your page</h2>
+<div style="text-align:center">
+    <button class="coloredButton" style="background-color:yellow; margin:10px; height:50px; width:200px" "></button>
+    <button class="coloredButton" style="background-color: blue ; margin:10px; height:50px; width:200px"></button>
+    <button class="coloredButton" style="background-color: green ; margin:10px; height:50px; width:200px"></button>
+</div>
+
+<script>
+    bgColor = "white";
+
+    for (var i = 0; i < document.getElementsByClassName("coloredButton").length; i++) {
+        document.getElementsByClassName("coloredButton")[i].onmouseover = function (ev) { mouseOver(ev) };
+        document.getElementsByClassName("coloredButton")[i].onmouseup = function (ev) { mouseUp(ev) };
+        document.getElementsByClassName("coloredButton")[i].onmouseout = function () { mouseOut() };
+    }
+
+    function mouseOver(e) {
+        document.body.style.backgroundColor = e.target.style.backgroundColor;
+    }
+    function mouseUp(e) {
+        bgColor = e.target.style.backgroundColor;
+    }
+    function mouseOut() {
+        document.body.style.backgroundColor = bgColor;
+    }
+</script>
